@@ -1,0 +1,154 @@
+$color-dark: #333
+$color-medium: #666
+$color-light: #aaa
+$color-white: white
+
+/********** START navBox **********/
+
+div#mainNavBox 
+ position: fixed
+ right: 40px
+ width: 50px
+ height: 50px
+ cursor: pointer
+ z-index: 15
+
+div.nav-position
+ top: 20px
+ transition: top 0.25s linear
+
+div.nav-top-position
+ top: -100px
+ transition: top 0.25s linear
+
+span#navTopLine, span#navCenterLine, span#navBottomLine
+ position: absolute
+ display: block
+ background-color: $color-medium
+
+span.navTopLine
+ top: 7px
+ left: 5px
+ width: 40px
+ height: 5px
+ transform: rotate(0deg)
+ transition: all 0.3s linear
+
+span.changeTopLine
+ top: 22.5px
+ left: 5px
+ width: 40px
+ height: 5px
+ transform: rotate(45deg)
+ transition: all 0.3s linear
+
+span.navCenterLine
+ width: 40px
+ height: 5px
+ top: 22.5px
+ left: 5px
+ opacity: 1
+ transition: height 0.3s linear, top 0.3s linear, opacity 0.6s linear
+
+span.changeCenterLine
+ width: 100%
+ height: 100%
+ top: 0
+ left: 0
+ opacity: 0
+ transition: height 0.3s linear, top 0.3s linear, opacity 0.6s linear
+
+span.navBottomLine
+ bottom: 7px
+ left: 5px
+ width: 40px
+ height: 5px
+ transform: rotate(0deg)
+ transition: all 0.3s linear
+
+span.changeBottomLine
+ bottom: 22.5px
+ left: 5px
+ width: 40px
+ height: 5px
+ transform: rotate(-45deg)
+ transition: all 0.3s linear
+
+@media (min-width: 800px)
+
+ div#mainNavBox
+  display: none
+
+/********** END navBox **********/
+
+/********** START mainNavMobile **********/
+
+ul#mainNavMobile
+ display: block
+ position: absolute
+ top: 70px
+ right: 0
+ height: 0
+
+ul#mainNavMobile li
+ margin: 5px 20px 5px 0
+ text-align: right
+ background: rgba(0, 0, 0, 0.8)
+ position: relative
+ top: 0
+
+ul#mainNavMobile li.hideToRight
+ right: -100%
+ transition: right 0.3s linear
+
+ul#mainNavMobile li.showToLeft
+ right: 0
+ transition: right 0.3s linear
+
+ul#mainNavMobile li a
+ display: block
+ padding: 10px 30px 10px 100px
+ color: #ddd
+ font-family: caviar-light
+ font-size: 1.3rem
+
+@media (min-width: 800px)
+
+ ul#mainNavMobile
+  width: 60%
+  top: 30px
+
+ ul#mainNavMobile.ul-position
+  top: 30px
+  right: 0
+  transition: top 0.25s linear
+
+ ul#mainNavMobile.ul-top-position
+  top: -100px
+  transition: top 0.25s linear
+
+ ul#mainNavMobile li.hideToRight
+  right: 0
+  float: left
+  margin: 0 5%
+  background: transparent
+
+ ul#mainNavMobile li a
+  color: $color-dark
+  padding: 0
+
+ ul#mainNavMobile li a:hover
+  color: $color-light
+  text-decoration: underline
+
+@media (min-width: 1000px)
+
+ ul#mainNavMobile li.hideToRight
+  margin: 0 8%
+
+@media (min-width: 1300px)
+
+ ul#mainNavMobile
+  width: 50%
+
+/********** END mainNavMobile **********/

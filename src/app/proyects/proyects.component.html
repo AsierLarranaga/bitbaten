@@ -1,0 +1,25 @@
+<app-biography></app-biography>
+<section *ngIf="proyects; else elseSection">
+    <h1>Proyectos:</h1>
+    <!-- <article *ngFor="let proyect of proyects, index as proyectId" (click)="getProyect(proyect)"> -->
+    <article *ngFor="let proyect of proyects">
+        <a class="article-link" routerLink="/proyectos">
+            <figure>
+                <div class="proyect-hover"></div>
+                <div class="proyect-features">
+                    <p><span>Proyecto: </span>{{ proyect.name }}</p>
+                    <p><span>Publicación: </span>{{ proyect.year }}</p>
+                    <p><span>Sitio web: </span>{{ proyect.url }}</p>
+                    <p><span>Tecnologías: </span>{{ proyect.getTechnologies() }}</p>
+                </div>
+                <img class="proyect-screenshot" [src]="proyect.screenshot" alt="Sitio web de {{ proyect.name }}" title="Sitio web de {{ proyect.name }}">
+            </figure>
+        </a>
+        <p class="proyect-url"><a href="http://{{ proyect.url }}" target="blank">{{ proyect.url }}</a></p>
+    </article>
+</section>
+<ng-template #elseSection>
+    <p style="padding: 200px 0; text-align: center;">Ha habido algún error y no se pueden mostrar los proyectos.</p>
+</ng-template>
+<div class="clear-float"></div>
+<app-contact></app-contact>
